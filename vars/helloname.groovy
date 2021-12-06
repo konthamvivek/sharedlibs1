@@ -1,4 +1,4 @@
-def hello(String firstname){
+def hello(firstname){
   sh '''
   echo hello world $firstname
   '''
