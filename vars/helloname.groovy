@@ -1,3 +1,3 @@
 def hello(firstname){
-  echo hello world ${firstname}
+  echo "hello world ${firstname}"
 }
