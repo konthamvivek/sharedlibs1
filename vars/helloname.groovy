@@ -1,5 +1,5 @@
 def hello(firstname){
   sh '''
-  echo hello world $firstname
+  echo hello world ${firstname}
   '''
 }
