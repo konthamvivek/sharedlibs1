@@ -1,7 +1,4 @@
 def create(){
-  environment{
-  GitCred=credentials('bbtdarshan')
-  }
   
   sh '''
   
