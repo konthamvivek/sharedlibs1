@@ -1,41 +1,22 @@
-def create(place){
-  if (place.equals("bitbucket")) {
+def call(int buildNumber) {
+  if (buildNumber % 2 == 0) {
     pipeline {
       agent any
-      environment{
-          GitCred=credentials('bbtdarshan')
-      }
       stages {
-        stage('bitbucket') {
+        stage('Even Stage') {
           steps {
-            script{
-            
-              sh '''
-  
-              curl -X POST -v -u $GitCred_USR:$GitCred_PSW -H "Content-Type: application/json" https://api.bitbucket.org/2.0/repositories/$GitCred_USR/$apiname -d '{"scm": "git", "is_private": "true","project": {"key": "'$project_name'"} }'
-  
-               '''
-            }
+            echo "The build number is even"
           }
         }
       }
     }
-  }
-  else {
+  } else {
     pipeline {
       agent any
-        environment{
-          GitCred=credentials('github')
-      }
       stages {
-        stage('github') {
+        stage('Odd Stage') {
           steps {
-            
-              sh '''
-                ls -la
-                curl -u $GitCred_USR:$GitCred_PSW https://api.github.com/user/repos -d '{"name":"'$apiname'","private":true}'
-    
-                '''
+            echo "The build number is odd"
           }
         }
       }
