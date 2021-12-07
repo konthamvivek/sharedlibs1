@@ -1,6 +1,7 @@
 def create(place){
   if (place.equals("bitbucket")) {
     pipeline {
+      agent any
       environment{
           GitCred=credentials('bbtdarshan')
       }
@@ -22,6 +23,7 @@ def create(place){
   }
   else {
     pipeline {
+      agent any
         environment{
           GitCred=credentials('github')
       }
