@@ -6,7 +6,7 @@ def call(place) {
       GitCred=credentials('github')
       }
       stages {
-        stage('Even Stage') {
+        stage('github') {
           steps {
             script{
               sh '''
@@ -20,10 +20,17 @@ def call(place) {
   } else {
     pipeline {
       agent any
+      environment {
+      GitCred=credentials('bbtdarshan')
+      }
       stages {
-        stage('Odd Stage') {
+        stage('bitbucket') {
           steps {
-            echo "The build number is odd"
+            script{
+              sh '''
+            curl -X POST -v -u $GitCred_USR:$GitCred_PSW -H "Content-Type: application/json" https://api.bitbucket.org/2.0/repositories/$GitCred_USR/$apiname -d '{"scm": "git", "is_private": "true","project": {"key": "'$project_name'"} }'
+            '''
+            }
           }
         }
       }
