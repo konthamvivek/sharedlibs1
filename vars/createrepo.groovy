@@ -2,6 +2,9 @@ def call(place) {
   if (place.equals('github')) {
     pipeline {
       agent any
+      environment {
+      GitCred=credentials('github')
+      }
       stages {
         stage('Even Stage') {
           steps {
