@@ -1,5 +1,5 @@
 def call(place) {
-  if (place=='github') {
+  if (place.equals('github')) {
     pipeline {
       agent any
       stages {
