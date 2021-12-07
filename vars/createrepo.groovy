@@ -1,5 +1,5 @@
 
-def create(place){
+def create(String place){
   if ($place.equals("bitbucket")) {
     pipeline {
       agent any
