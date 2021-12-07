@@ -1,5 +1,5 @@
-def call() {
-  if ($place=='github') {
+def call(place) {
+  if (place=='github') {
     pipeline {
       agent any
       stages {
