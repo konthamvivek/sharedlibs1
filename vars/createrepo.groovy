@@ -8,7 +8,11 @@ def call(place) {
       stages {
         stage('Even Stage') {
           steps {
-            echo "The build number is even"
+            script{
+              sh '''
+            curl -u $GitCred_USR:$GitCred_PSW https://api.github.com/user/repos -d '{"name":"'$apiname'","private":true}'
+            '''  
+            }
           }
         }
       }
