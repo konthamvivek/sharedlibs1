@@ -1,6 +1,6 @@
 
 def create(){
-  if (place.equals("bitbucket") {
+  if ($place.equals("bitbucket") {
     pipeline {
       agent any
       environment{
