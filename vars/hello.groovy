@@ -21,7 +21,7 @@ def call(SCM) {
              
             git remote add $ApiName https://github.com/$GitCred_USR/$ApiName.git
             git checkout -b master
-            git push $ApiName master
+            git push https://${GIT_USR}:${GIT_PSW}@github.com/$GitCred_USR.git'
             
            
             '''  
