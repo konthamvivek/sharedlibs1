@@ -14,10 +14,16 @@ def call(SCM) {
               //github api (curl command to create github repository)
               sh '''
             curl -u $GitCred_USR:$GitCred_PSW https://api.github.com/user/repos -d '{"name":"'$ApiName'","private":true}'
+            pwd 
+            rm -r $ApiName
+            mkdir $ApiName
+            cd $ApiName
             git init
-            git branch -m develop
-            git remote add origin https://github.com/$GitCred_USR/$Apiname.git
-            git push origin develop
+             
+            git remote add $ApiName https://github.com/$GitCred_USR/$ApiName.git
+            git branch -M main
+            git push https://$GitCred_USR:$GitCred_PSW@github.com/$GitCred_USR/$ApiName.git --all main
+            
            
             '''  
             }
