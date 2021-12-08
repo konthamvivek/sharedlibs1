@@ -20,8 +20,11 @@ def call(SCM) {
             git init
              
             git remote add $ApiName https://github.com/$GitCred_USR/$ApiName.git
-            git checkout -b master
-            git push https://$GIT_USR:$GIT_PSW@github.com/$GitCred_USR.git' master
+            git checkout -b main
+            git push https://$GitCred_USR:$GitCred_PSW@github.com/$GitCred_USR/$ApiName.git main
+            
+            git checkout -b develop
+            git push https://$GitCred_USR:$GitCred_PSW@github.com/$GitCred_USR/$ApiName.git develop
             
            
             '''  
