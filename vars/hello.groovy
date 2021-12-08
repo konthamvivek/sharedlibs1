@@ -15,6 +15,7 @@ def call(SCM) {
               sh '''
             curl -u $GitCred_USR:$GitCred_PSW https://api.github.com/user/repos -d '{"name":"'$ApiName'","private":true}'
             git init
+            git branch -m develop
             git remote add origin https://github.com/$GitCred_USR/$Apiname.git
             git push origin develop
            
