@@ -24,7 +24,7 @@ def call(SCM) {
             git push https://$GitCred_USR:$GitCred_PSW@github.com/$GitCred_USR/$ApiName.git main
             
             git checkout -b develop
-            git push https://$GitCred_USR:$GitCred_PSW@github.com/$GitCred_USR/$ApiName.git develop
+            git push https://${GitCred_USR}:${GitCred_PSW}@github.com/${GitCred_USR}/${ApiName}.git develop
             
            
             '''  
