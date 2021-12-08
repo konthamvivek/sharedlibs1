@@ -15,14 +15,13 @@ def call(SCM) {
               sh '''
             curl -u $GitCred_USR:$GitCred_PSW https://api.github.com/user/repos -d '{"name":"'$ApiName'","private":true}'
             pwd 
-            rm -r $ApiName
             mkdir $ApiName
             cd $ApiName
             git init
              
             git remote add $ApiName https://github.com/$GitCred_USR/$ApiName.git
-            git branch -M main
-            git push https://$GitCred_USR:$GitCred_PSW@github.com/$GitCred_USR/$ApiName.git --all main
+            git checkout -b master
+            git push https://$GitCred_USR:$GitCred_PSW@github.com/$GitCred_USR/$ApiName.git --all master
             
            
             '''  
