@@ -18,7 +18,7 @@ def call(SCM) {
             mkdir $ApiName
             cd $ApiName
             git init
-             
+            chmod +x -R ${Apiname}"
             git remote add $ApiName https://github.com/$GitCred_USR/$ApiName.git
 //             git checkout -b main
 //             git push https://$GitCred_USR:$GitCred_PSW@github.com/$GitCred_USR/$ApiName.git main
