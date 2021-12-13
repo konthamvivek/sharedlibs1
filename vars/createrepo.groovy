@@ -26,6 +26,13 @@ def call(SCM) {
             git branch -M main
             git remote add $ApiName https://$GitCred_USR:$GitCred_PSW@github.com/$GitCred_USR/$ApiName.git
             echo $GitCred_PSW | git push -u orgin main
+            git branch -M develop
+            echo "$ApiName" >> README.md
+            git push
+            git branch -M test
+            echo "$ApiName" >> README.md
+            git push
+            
            
             '''  
             }
@@ -59,6 +66,13 @@ def call(SCM) {
             git branch -M main
             git remote add $ApiName https://$GitCred_USR:$GitCred_PSW@bitbucket.org/$GitCred_USR/$ApiName.git
             echo $GitCred_PSW | git push -u $ApiName main
+            git branch -M develop
+            echo "$ApiName" >> README.md
+            git push
+            git branch -M test
+            echo "$ApiName" >> README.md
+            git push
+            
             '''
             }
           }
