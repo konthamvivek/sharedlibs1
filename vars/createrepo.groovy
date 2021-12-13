@@ -21,10 +21,10 @@ def call(SCM) {
             git init
             git add .
             git config user.name "$GitCred_USR"
-            git config user.email "gauravp@sidgs.com"
+            git config user.email "konthamvivek13@gmail.com"
             git commit -m "first commit"
             git branch -M main
-            git remote add origin  https://$GitCred_USR:$GitCred_PSW@github.com/$GitCred_USR/$ApiName.git
+            git remote add $ApiName https://$GitCred_USR:$GitCred_PSW@github.com/$GitCred_USR/$ApiName.git
             echo $GitCred_PSW | git push -u orgin main
            
             '''  
@@ -54,11 +54,11 @@ def call(SCM) {
             git init
             git add .
             git config user.name "$GitCred_USR"
-            git config user.email "gauravp@sidgs.com"
+            git config user.email "konthamvivek13@gmail.com"
             git commit -m "first commit"
             git branch -M main
-            git remote add origin  https://$GitCred_USR:$GitCred_PSW@bitbucket.org/$GitCred_USR/$ApiName.git
-            echo $GitCred_PSW | git push -u orgin main
+            git remote add $ApiName https://$GitCred_USR:$GitCred_PSW@bitbucket.org/$GitCred_USR/$ApiName.git
+            echo $GitCred_PSW | git push -u $ApiName main
             '''
             }
           }
